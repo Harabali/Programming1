@@ -24,7 +24,7 @@ def startBletterAnimalName(list):
 def divisionByX(n,x):
     res = []
     for i in range(1,n+1):
-        a = int(input('Next number:'))
+        a = int(input('Next n:'))
         if a%x == 0:
             res.append(a)
     return res
