@@ -24,7 +24,7 @@ def startBletterAnimalName(list):
 def divisionByX(n,x):
     res = []
     for i in range(1,n+1):
-        a = int(input('Next n:'))
+        a = int(input('Next number:'))
         if a%x == 0:
             res.append(a)
     return res
@@ -42,6 +42,7 @@ def oldestAnimal(str):
     for s in str:
         s2 = s.split(':')
         if min>int(s2[1]):
+            min = int(s2[1])
             name = s2[0]
     return name
 
