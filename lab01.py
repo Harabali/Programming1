@@ -42,6 +42,7 @@ def oldestAnimal(str):
     for s in str:
         s2 = s.split(':')
         if min>int(s2[1]):
+            min = int(s2[1])
             name = s2[0]
     return name
 
