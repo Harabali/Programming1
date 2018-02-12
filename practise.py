@@ -6,12 +6,12 @@ def sumOfFactors(n):
     return sum
 
 
-# #--------------------------------------------------
-# n = int(input('Give a number:'))
-# sumOfFacts = sumOfFactors(n)
-# if sumOfFacts == n:
-#     print(n, 'is a prefect number')
-# elif sumOfFacts < n:
-#     print(n,'is a deficient number')
-# else:
-#     print(n,'is a abundant number')
+#--------------------------------------------------
+n = int(input('Give a number:'))
+sumOfFacts = sumOfFactors(n)
+if sumOfFacts == n:
+    print(n, 'is a prefect number')
+elif sumOfFacts < n:
+    print(n,'is a deficient number')
+else:
+    print(n,'is a abundant number')
