@@ -51,6 +51,17 @@ def sumOfChars(string):
             flag = False
     return sum
 
+
+def generateRandomNumber(n,outFile):
+    for i in range(0,n):
+        print(random.randint(0,100),file=outFile)
+
+def sumOfNumbers(outFile):
+    sum = 0;
+    for n in outFile:
+        sum+=int(n)
+    return sum
+
 # #EX0:
 # program_name = sys.argv[0]
 # print('The name of my program is', program_name)
@@ -80,3 +91,10 @@ def sumOfChars(string):
 # #EX4:
 # print(sumOfChars(sys.argv[1]))
 
+#Ex5:
+n = int(sys.argv[1])
+outFile = open(sys.argv[2],'w+')
+generateRandomNumber(n,outFile)
+outFile.seek(0)
+print('The sum of numbers from the file is:',sumOfNumbers(outFile))
+outFile.close()
