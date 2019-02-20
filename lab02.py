@@ -3,8 +3,10 @@ import string
 def numberOfLannister(myFile):
     num = 0
     for str in myFile:
-        if 'Lannister' in str:
-            num+=1
+        tmp = str.split(' ')
+        for word in tmp:
+            if 'Lannister' in word:
+                num+=1
     return num
 
 def inverseLetter(str):
@@ -70,12 +72,12 @@ def longestWord(inputName, outputName):
 
 
 # # EX3:
-# try:
-#     myFile = open("..\\input.txt","r")
-#     print('"Lannister" occurs', numberOfLannister(myFile), 'times in the text.')
-#     myFile.close()
-# except FileNotFoundError:
-#     print('The given file is not findable.')
+try:
+    myFile = open("input.txt","r")
+    print('"Lannister" occurs', numberOfLannister(myFile), 'times in the text.')
+    myFile.close()
+except FileNotFoundError:
+    print('The given file is not findable.')
 
 # # EX4:
 # try:
@@ -90,4 +92,4 @@ def longestWord(inputName, outputName):
 
 
 # EX5:
-longestWord('..\\input.txt','..\\longestWords.txt')
+# longestWord('..\\input.txt','..\\longestWords.txt')
