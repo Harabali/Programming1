@@ -53,22 +53,22 @@ def longestWord(inputName, outputName):
 
 #MAIN------------------------------------------------
 # # EX1:
-# while True:
-#     try:
-#         a = int(input('Give me a number: '))
-#         print(a)
-#         break
-#     except ValueError:
-#         print('That was not a valid number.')
+while True:
+    try:
+        a = int(input('Give me a number: '))
+        print(a)
+        break
+    except ValueError:
+        print('That was not a valid number.')
 
 # # EX2:
-# try:
-#     myFile = open("C:\\Users\\otthoni\\Desktop\\input.txt","r")
-#     for str in myFile:
-#         print(str)
-#     myFile.close()
-# except FileNotFoundError:
-#     print('The given file is not findable.')
+try:
+    myFile = open("C:\\Users\\otthoni\\Desktop\\input.txt","r")
+    for str in myFile:
+        print(str)
+    myFile.close()
+except FileNotFoundError:
+    print('The given file is not findable.')
 
 
 # # EX3:
@@ -80,16 +80,16 @@ except FileNotFoundError:
     print('The given file is not findable.')
 
 # # EX4:
-# try:
-#     infile = open("..\\input.txt","r")
-#     outfile = open("..\\output.txt","w")
-#     for str in infile:
-#         print(inverseLetter(str),file=outfile)
-#     infile.close()
-#     outfile.close()
-# except FileNotFoundError:
-#     print('The given file is not findable.')
+try:
+    infile = open("..\\input.txt","r")
+    outfile = open("..\\output.txt","w")
+    for str in infile:
+        print(inverseLetter(str),file=outfile)
+    infile.close()
+    outfile.close()
+except FileNotFoundError:
+    print('The given file is not findable.')
 
 
 # EX5:
-# longestWord('..\\input.txt','..\\longestWords.txt')
+longestWord('..\\input.txt','..\\longestWords.txt')
