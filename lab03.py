@@ -62,12 +62,12 @@ def sumOfNumbers(outFile):
         sum+=int(n)
     return sum
 
-# #EX0:
-# program_name = sys.argv[0]
-# print('The name of my program is', program_name)
-# print(len(sys.argv))
-# for x in sys.argv[1:]:
-#     print(x)
+#EX0:
+program_name = sys.argv[0]
+print('The name of my program is', program_name)
+print(len(sys.argv))
+for x in sys.argv[1:]:
+    print(x)
 
 # #EX1:
 # list1,list2 = fillList(sys.argv[1:])
@@ -78,7 +78,7 @@ def sumOfNumbers(outFile):
 
 # #EX2:
 # n = int(sys.argv[1])
-# outFile = open(sys.argv[2],'w')
+# outFile = open(sys.argv[2],'w')ł
 # sumOfFirstN(n,outFile)
 # outFile.close()
 
@@ -91,10 +91,10 @@ def sumOfNumbers(outFile):
 # #EX4:
 # print(sumOfChars(sys.argv[1]))
 
-#Ex5:
-n = int(sys.argv[1])
-outFile = open(sys.argv[2],'w+')
-generateRandomNumber(n,outFile)
-outFile.seek(0)
-print('The sum of numbers from the file is:',sumOfNumbers(outFile))
-outFile.close()
+# #Ex5:
+# n = int(sys.argv[1])
+# outFile = open(sys.argv[2],'w+')
+# generateRandomNumber(n,outFile)
+# outFile.seek(0)
+# print('The sum of numbers from the file is:',sumOfNumbers(outFile))
+# outFile.close()
