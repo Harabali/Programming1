@@ -36,19 +36,19 @@ d = np.random.randint(1,100,15)
 d[d==d.max()]=-1
 print(d)
 
-#EX4:
+#EX5:
 c = np.arange(-3,15)
 c[(c<8) & (c>3)] = -1
 print(c)
 
-#RX5:
+#EX6:
 d = np.random.randint(1,50,15)
 n = int(input('Give a number:'))
 e = np.abs(d-n)
 print(d)
 print(d[e==e.min()])
 
-#EX6:
+#EX7:
 e = np.random.randint(1,50,15)
 print(e)
 start = t.time()
