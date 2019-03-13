@@ -54,16 +54,17 @@ def sortMatrixbyColumn(m,ind):
 # print(isSorted(v))
 
 #EX2:
-m = np.random.randint(10,45,(4,5))
-print(m)
+# m = np.random.randint(10,45,(4,5))
+# print(m)
 # ind = int(input('Give me a index of selected column:'))
 # sortMatrixbyColumn(m,ind)
-print(m[np.argsort(m[:,2])])
+# # print(m[np.argsort(m[:,2])])
 
 
 #EX3:
-# m = np.ones((4,5))
-# print(isRowCOlSumsEq(m))
+m = np.ones((4,5))
+print(m)
+print(isRowCOlSumsEq(m))
 
 #EX4:
 # str = input('Give the shape of array:')
