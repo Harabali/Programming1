@@ -49,9 +49,9 @@ def sortMatrixbyColumn(m,ind):
                 m[j,:] = tmp.copy()
 
 #EX1:
-# v = np.random.randint(10,45,15)
-# v.sort()
-# print(isSorted(v))
+v = np.random.randint(10,45,15)
+v.sort()
+print(isSorted(v))
 
 #EX2:
 # m = np.random.randint(10,45,(4,5))
