@@ -36,7 +36,7 @@ def listOfSpecialElements(m):
     for i in range(0,m.shape[0]):
         for j in range(0,m.shape[1]):
             if m[i,j]%(i+1) == 0 and m[i,j]%(j+1) == 0:
-                listOfElemnets.append((m[i,j],i,j))
+                listOfElemnets.append((m[i,j],i+1,j+1))
     return listOfElemnets
 
 def sortMatrixbyColumn(m,ind):
@@ -62,9 +62,9 @@ def sortMatrixbyColumn(m,ind):
 
 
 #EX3:
-m = np.ones((4,5))
-print(m)
-print(isRowCOlSumsEq(m))
+# m = np.ones((4,5))
+# print(m)
+# print(isRowCOlSumsEq(m))
 
 #EX4:
 # str = input('Give the shape of array:')
