@@ -49,16 +49,16 @@ def sortMatrixbyColumn(m,ind):
                 m[j,:] = tmp.copy()
 
 #EX1:
-v = np.random.randint(10,45,15)
-v.sort()
-print(isSorted(v))
+# v = np.random.randint(10,45,15)
+# v.sort()
+# print(isSorted(v))
 
 #EX2:
-# m = np.random.randint(10,45,(4,5))
-# print(m)
-# # ind = int(input('Give me a index of selected column:'))
-# # sortMatrixbyColumn(m,ind)
-# print(m[m[:,2].argsort()])
+m = np.random.randint(10,45,(4,5))
+print(m)
+# ind = int(input('Give me a index of selected column:'))
+# sortMatrixbyColumn(m,ind)
+print(m[np.argsort(m[:,2])])
 
 
 #EX3:
