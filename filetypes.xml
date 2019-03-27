@@ -3,6 +3,7 @@
     <extensionMap>
       <mapping pattern="12B class" type="PLAIN_TEXT" />
       <mapping ext="item" type="PLAIN_TEXT" />
+      <mapping pattern="lab07_EX2" type="Python" />
     </extensionMap>
   </component>
 </application>
