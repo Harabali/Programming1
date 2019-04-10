@@ -1,16 +1,18 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
+import matplotlib.image as img
 
 def Sigmoid(x):
     y = 1/(1+np.power(np.e,x))
     return y
 
+def sigmoidGradient(x):
+    return Sigmoid(x)*(1-Sigmoid(x))
+
 def histogramOfImg(m):
-    h = np.zeros(255)
-    for i in range(m.shape[0]):
-        for j in range(m.shape[1]):
-            h[m[i,j]]+=1
+    h = np.zeros(256)
+    for i in range(0,256):
+        h[i] = np.sum(m==i)
     return h
 
 def RGB2gray(img):
@@ -24,55 +26,66 @@ def eraseRows(m):
         if meanRows[i]>mV:
             m[i,:] = np.zeros(m.shape[1])
 
-def meanFilter(img):
+def meanFilter(img,ws):
     resImg = np.zeros(img.shape)
-    for i in range(2,img.shape[0]-2):
-        for j in range(2,img.shape[1]-2):
-            resImg[i,j] = np.mean(img[i-2:i+2,j-2:j+2])
-    return resImg
+    for k in range(0,img.shape[2]):
+        for i in range(ws,img.shape[0]-ws):
+            for j in range(ws,img.shape[1]-ws):
+                resImg[i,j,k] = np.mean(img[i-ws:i+ws,j-ws:j+ws,k])
+
+    return resImg.astype('uint8')
 
 #EX1:
-# x = np.arange(-3,3,0.1)
+# x = np.arange(-10,10,0.1)
 # y = Sigmoid(x)
+# gy = sigmoidGradient(x)
 #
-# plt.plot(x,y,'g-')
+# plt.plot(x,y,'g-',label='sigmoid')
+# plt.plot(x,gy,'y--',label='derivates of sigmoid')
+# plt.title('SIGMOID function')
 # plt.xlabel('X values')
 # plt.ylabel('Y values')
+# plt.legend()
 # plt.show()
 
-# EX2:
-# m = np.random.randint(0,255,(600,800))
-# h = histogramOfImg(m)
-# plt.bar(np.arange(0,255,1),h)
-# # plt.hist(np.reshape(m,600*800),255)
+# # EX2:
+# m = img.imread('flowers.jpg')
+# # plt.subplot(3,1,1)
+# # plt.imshow(m[:,:,0],cmap='gray')
+# # plt.subplot(3,1,2)
+# # plt.imshow(m[:,:,1],cmap='gray')
+# plt.subplot(2,1,1)
+# plt.imshow(m[:,:,2],cmap='gray')
+# h = histogramOfImg(m[:,:,2])
+# # print(h)
+# plt.subplot(2,1,2)
+# plt.bar(range(0,256),h)
 # plt.show()
 
 #EX3:
-# img = mpimg.imread('flowers.jpg')
+# img = img.imread('flowers.jpg')
 # # print(img)
 # grayImg = RGB2gray(img)
-# # grayImg = grayImg.astype(np.uint8)
-# # print(grayImg.dtype)
-# # plt.imshow(grayImg,cmap='gray')
-# # plt.hist(np.reshape(grayImg,grayImg.size),255)
-# plt.hist(np.reshape(img[:,:,0],grayImg.size),255,fc='r')
-# plt.hist(np.reshape(img[:,:,1],grayImg.size),255,fc='g')
-# plt.hist(np.reshape(img[:,:,2],grayImg.size),255,fc='b')
+# plt.subplot(2,1,1)
+# plt.imshow(grayImg, cmap='gray')
+# plt.subplot(2,1,2)
+# plt.hist(np.reshape(grayImg,(img.shape[0]*img.shape[1],)),255)
 # plt.show()
 
 #EX4:
-# img = mpimg.imread('flowers.jpg')
+# img = img.imread('flowers.jpg')
 # grayImg = RGB2gray(img)
 # eraseRows(grayImg)
-# plt.imshow(grayImg)
+# plt.imshow(grayImg,cmap='gray')
 # plt.show()
 
 #EX5:
-# img = mpimg.imread('flowers.jpg')
+img = img.imread('flowers.jpg')
 # grayImg = RGB2gray(img)
-# filteredImg = meanFilter(grayImg)
-# plt.imshow(grayImg)
-# plt.show()
-# plt.imshow(filteredImg)
-# plt.show()
+filteredImg = meanFilter(img,13)
+print(filteredImg.dtype)
+plt.imshow(img)
+plt.show()
+plt.imshow(filteredImg)
+plt.show()
 
