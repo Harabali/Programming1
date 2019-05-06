@@ -1,5 +1,5 @@
 import string
-
+import matplotlib.pyplot as plt
 
 #MAIN
 #EX1:
@@ -25,12 +25,12 @@ def clearRow(str):
             newR+=ch.lower()
     return newR
 
-#EX2:
+# #EX2:
 # fin = open('input.txt','r')
 # dict = {}
 # for row in fin:
 #     row = clearRow(row)
-#     for word in row.split(' '):
+#     for word in row.strip().split(' '):
 #         if word in dict:
 #             dict[word] += 1
 #         else:
@@ -38,6 +38,12 @@ def clearRow(str):
 #
 # for k in dict:
 #     print(k,': ', dict[k])
+#
+# ls_k = [k for k,v in dict.items() if v>2]
+# ls_v = [v for k,v in dict.items() if v>2]
+# plt.bar(range(len(ls_k)),ls_v)
+# plt.xticks(range(0,len(ls_k)),ls_k,rotation=90)
+# plt.show()
 #
 # fin.close()
 
