@@ -1,27 +1,31 @@
 import numpy as np
 
 def isSorted(v):
-    if v[0]<v[1]:
+    if v.size == 1:
+        return True
+    if v[0]<=v[1]:
         for i in range(1,v.size):
             if v[i-1] > v[i]:
-                break
-        if i < v.size-1:
-            return False
-        else:
-            return True
+                return False
+        return True
     else:
         for i in range(1,v.size):
             if v[i-1] < v[i]:
-                break
-        if i < v.size-1:
-            return False
-        else:
-            return True
+                return False
+        return True
 
 def isRowCOlSumsEq(m):
     colSum = m.sum(axis=0)
     rowSum = m.sum(axis=1)
-    return np.sum(colSum==colSum[0]) + np.sum(rowSum==colSum[0]) == colSum.size+rowSum.size
+    ref = colSum[0]
+    for n in colSum:
+        if ref != n:
+            return False
+    ref = rowSum[0]
+    for n in rowSum:
+        if ref != n:
+            return False
+    return colSum.sum() == rowSum.sum()
 
 def indicesOfSpecialCols(m):
     listOfInd=[]
@@ -48,25 +52,26 @@ def sortMatrixbyColumn(m,ind):
                 m[i,:] = m[j,:].copy()
                 m[j,:] = tmp.copy()
 
-#EX1:
+# EX1:
 # v = np.random.randint(10,45,15)
 # v.sort()
-# print(isSorted(v))
+# print(isSorted(v[::-1]))
 
-#EX2:
+# # EX2:
 # m = np.random.randint(10,45,(4,5))
 # print(m)
 # ind = int(input('Give me a index of selected column:'))
 # sortMatrixbyColumn(m,ind)
-# # print(m[np.argsort(m[:,2])])
+# print(m)
+# print(m[np.argsort(m[:,ind])])
 
 
-#EX3:
-# m = np.ones((4,5))
+# # EX3:
+# m = np.random.randint(1,2,(5,5))
 # print(m)
 # print(isRowCOlSumsEq(m))
 
-#EX4:
+# # EX4:
 # str = input('Give the shape of array:')
 # n,m = str.split(',')
 # m = np.random.randint(-5,6,(int(n),int(m)))
@@ -74,7 +79,7 @@ def sortMatrixbyColumn(m,ind):
 # print(indicesOfSpecialCols(m))
 
 # EX5:
-# m = np.random.randint(10,45,(4,5))
-# print(m)
-# print(listOfSpecialElements(m))
+m = np.random.randint(10,45,(4,5))
+print(m)
+print(listOfSpecialElements(m))
 
