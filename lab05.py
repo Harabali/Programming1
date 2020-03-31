@@ -67,9 +67,9 @@ print(m[np.argsort(m[:,ind])])
 
 
 # # EX3:
-# m = np.random.randint(1,2,(5,5))
-# print(m)
-# print(isRowCOlSumsEq(m))
+m = np.random.randint(1,2,(5,5))
+print(m)
+print(isRowCOlSumsEq(m))
 
 # # EX4:
 # str = input('Give the shape of array:')
