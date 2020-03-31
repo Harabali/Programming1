@@ -72,11 +72,11 @@ print(m)
 print(isRowCOlSumsEq(m))
 
 # # EX4:
-# str = input('Give the shape of array:')
-# n,m = str.split(',')
-# m = np.random.randint(-5,6,(int(n),int(m)))
-# print(m)
-# print(indicesOfSpecialCols(m))
+str = input('Give the shape of array:')
+n,m = str.split(',')
+m = np.random.randint(-5,6,(int(n),int(m)))
+print(m)
+print(indicesOfSpecialCols(m))
 
 # EX5:
 m = np.random.randint(10,45,(4,5))
