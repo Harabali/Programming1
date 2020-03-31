@@ -58,12 +58,12 @@ v.sort()
 print(isSorted(v[::-1]))
 
 # # EX2:
-# m = np.random.randint(10,45,(4,5))
-# print(m)
-# ind = int(input('Give me a index of selected column:'))
-# sortMatrixbyColumn(m,ind)
-# print(m)
-# print(m[np.argsort(m[:,ind])])
+m = np.random.randint(10,45,(4,5))
+print(m)
+ind = int(input('Give me a index of selected column:'))
+sortMatrixbyColumn(m,ind)
+print(m)
+print(m[np.argsort(m[:,ind])])
 
 
 # # EX3:
