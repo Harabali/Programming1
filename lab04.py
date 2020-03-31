@@ -17,20 +17,20 @@ def sortVector(v):
     return v
 
 #EX1:
-# a = np.arange(10,50) #np.asarray(range(10,50))
-# b = inverseVector(a)
-# print(a)
-# print(b)
+a = np.arange(10,50) #np.asarray(range(10,50))
+b = inverseVector(a)
+print(a)
+print(b)
 
 #EX2:
-# b = np.array(np.ceil(100*np.random.random((30))),dtype='uint8')
-# b = np.random.randint(0,101,30)
-# minB = b.min()
-# maxB = np.max(b) #b.max()
-# print(b)
-# print(minB, maxB)
-# ind = np.where((b==minB) | (b==maxB))
-# print(ind)
+b = np.array(np.ceil(100*np.random.random((30))),dtype='uint8')
+b = np.random.randint(0,101,30)
+minB = b.min()
+maxB = np.max(b) #b.max()
+print(b)
+print(minB, maxB)
+ind = np.where((b==minB) | (b==maxB))
+print(ind)
 
 
 #EX3:
