@@ -38,10 +38,10 @@ def meanFilter(img,ws):
 # #EX1:
 # x = np.arange(-5,5.01,0.01)
 # y = Sigmoid(x)
-# gy = sigmoidGradient(x)
+# d = sigmoidGradient(x)
 #
 # plt.plot(x,y,'g-',label='sigmoid')
-# plt.plot(x,gy,'y--',label='derivates of sigmoid')
+# plt.plot(x,d,'y--',label='derivates of sigmoid')
 # plt.title('SIGMOID function')
 # plt.xlabel('X values')
 # plt.ylabel('Y values')
@@ -73,19 +73,20 @@ def meanFilter(img,ws):
 # plt.show()
 
 #EX4:
-# img = img.imread('flowers.jpg')
-# grayImg = RGB2gray(img)
+# m = img.imread('flowers.jpg')
+# grayImg = RGB2gray(m)
 # eraseRows(grayImg)
 # plt.imshow(grayImg,cmap='gray')
 # plt.show()
 
 #EX5:
-img = img.imread('flowers.jpg')
+m = img.imread('flowers.jpg')
 # grayImg = RGB2gray(img)
-filteredImg = meanFilter(img,13)
+filteredImg = meanFilter(m,13)
 print(filteredImg.dtype)
-plt.imshow(img)
+plt.imshow(m)
 plt.show()
 plt.imshow(filteredImg)
 plt.show()
+
 
