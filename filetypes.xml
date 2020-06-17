@@ -3,6 +3,7 @@
     <extensionMap>
       <mapping pattern="12B class" type="PLAIN_TEXT" />
       <mapping ext="pyd" type="PLAIN_TEXT" />
+      <mapping ext="list" type="PLAIN_TEXT" />
       <mapping ext="h5" type="PLAIN_TEXT" />
       <mapping ext="item" type="PLAIN_TEXT" />
       <mapping pattern="ImageHandler" type="Python" />
