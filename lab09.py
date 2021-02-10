@@ -1,7 +1,7 @@
 import random
-import keyboard
+# import keyboard
 
-# EX1:
+# # EX1:
 # s1 = set([4,6,8,2,'apple',54,'abcd',2,4,6])
 # s2 = {1,6,8,5,68,4,8,2,1,'sg','eq'}
 #
@@ -10,7 +10,7 @@ import keyboard
 # s2.update({4,6,8,2,'apple',54,'abcd',2,4,6})
 #
 #
-# for i in s1 ^ s2:
+# for i in s1 | s2:
 #     print(i)
 #
 # print(s2.issuperset(s1))
@@ -88,3 +88,16 @@ while True:
         print('You have to choose from the possible properties!')
     except IndexError:
         print('You have to take lesser or equal bet than you money!')
+
+# EX3:
+import time
+st = time.time()
+primes = set(range(2,5001))
+for n in range(2,5001):
+    p = n
+    while p<=5000:
+        p += n
+        primes.discard(p)
+print(primes)
+
+print(time.time()-st)

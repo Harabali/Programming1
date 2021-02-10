@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import matplotlib.image as img
 
 def Sigmoid(x):
-    y = 1/(1+np.power(np.e,x))
+    y = 1/(1+np.power(np.e,-x)) #np.e**-x   np.exp(-x)
     return y
 
 def sigmoidGradient(x):
@@ -35,57 +35,58 @@ def meanFilter(img,ws):
 
     return resImg.astype('uint8')
 
-#EX1:
-# x = np.arange(-10,10,0.1)
+# #EX1:
+# x = np.arange(-5,5.01,0.01)
 # y = Sigmoid(x)
-# gy = sigmoidGradient(x)
+# d = sigmoidGradient(x)
 #
 # plt.plot(x,y,'g-',label='sigmoid')
-# plt.plot(x,gy,'y--',label='derivates of sigmoid')
+# plt.plot(x,d,'y--',label='derivates of sigmoid')
 # plt.title('SIGMOID function')
 # plt.xlabel('X values')
 # plt.ylabel('Y values')
 # plt.legend()
 # plt.show()
 
-# # EX2:
+# EX2:
 # m = img.imread('flowers.jpg')
-# # plt.subplot(3,1,1)
-# # plt.imshow(m[:,:,0],cmap='gray')
-# # plt.subplot(3,1,2)
-# # plt.imshow(m[:,:,1],cmap='gray')
-# plt.subplot(2,1,1)
+# plt.subplot(3,1,1)
+# plt.imshow(m[:,:,0],cmap='gray')
+# plt.subplot(3,1,2)
+# plt.imshow(m[:,:,1],cmap='gray')
+# plt.subplot(3,1,3)
 # plt.imshow(m[:,:,2],cmap='gray')
-# h = histogramOfImg(m[:,:,2])
+# h = histogramOfImg(m[:,:,1])
 # # print(h)
 # plt.subplot(2,1,2)
 # plt.bar(range(0,256),h)
 # plt.show()
-
-#EX3:
-# img = img.imread('flowers.jpg')
+#
+# #EX3:
+# m = img.imread('flowers.jpg')
 # # print(img)
-# grayImg = RGB2gray(img)
+# grayImg = RGB2gray(m)
 # plt.subplot(2,1,1)
 # plt.imshow(grayImg, cmap='gray')
 # plt.subplot(2,1,2)
-# plt.hist(np.reshape(grayImg,(img.shape[0]*img.shape[1],)),255)
+# plt.hist(np.reshape(grayImg,(m.shape[0]*m.shape[1],)),256)
 # plt.show()
 
 #EX4:
-# img = img.imread('flowers.jpg')
-# grayImg = RGB2gray(img)
+# m = img.imread('flowers.jpg')
+# grayImg = RGB2gray(m)
 # eraseRows(grayImg)
 # plt.imshow(grayImg,cmap='gray')
 # plt.show()
 
 #EX5:
-img = img.imread('flowers.jpg')
+m = img.imread('flowers.jpg')
 # grayImg = RGB2gray(img)
-filteredImg = meanFilter(img,13)
+filteredImg = meanFilter(m,13)
 print(filteredImg.dtype)
-plt.imshow(img)
+plt.imshow(m)
 plt.show()
 plt.imshow(filteredImg)
 plt.show()
+
 
